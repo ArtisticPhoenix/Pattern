@@ -1,3 +1,33 @@
 {
-	"name" : "patterns/patterns"
+	"name" : "evo/patterns",
+	"description" : "Common programing patterns",
+	"license" : "GPL-3.0",
+	"keywords" : [
+		"Patterns"
+	],
+	"autoload" : {
+		"psr-4" : {
+			"evo\\" : [
+				"src/evo"
+			]
+		}
+	},
+	"require" : {
+		"php" : ">=5.6"
+	},
+	"support" : {
+		"email" : "artisticphoenix@gmail.com",
+		"source" : "https://github.com/ArtisticPhoenix/Pattern.git",
+		"issues" : "https://github.com/ArtisticPhoenix/Pattern/issues",
+		"wiki" : "https://github.com/ArtisticPhoenix/Pattern/wiki"
+	},
+	"type" : "library",
+	"authors" : [{
+			"name" : "Hugh Durham III",
+			"email" : "artisticphoenix@gmail.com",
+			"homepage" : "http://www.artisticphoenix.com",
+			"role" : "Author"
+		}
+	],
+	"minimum-stability" : "dev"
 }
