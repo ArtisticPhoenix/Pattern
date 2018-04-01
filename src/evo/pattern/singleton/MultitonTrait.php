@@ -1,5 +1,6 @@
 <?php
 namespace evo\pattern\singleton;
+
 /**
  *
  * (c) 2016 Hugh Durham III
@@ -18,7 +19,8 @@ namespace evo\pattern\singleton;
  * @subpackage pattern
  *
  */
-trait MultitonTrait{
+trait MultitonTrait
+{
     
     /**
      *
@@ -54,8 +56,9 @@ trait MultitonTrait{
      *
      * @return self
      */
-    public static function getInstance($alias=''){
-        if(!isset(self::$instances[$alias])){
+    public static function getInstance($alias='')
+    {
+        if (!isset(self::$instances[$alias])) {
             self::$instances[$alias] = new self;
             self::$instances[$alias]->init($alias);
         }
@@ -66,7 +69,8 @@ trait MultitonTrait{
      *
      * @return boolean
      */
-    public static function isInstantiated($alias=''){
+    public static function isInstantiated($alias='')
+    {
         return isset(self::$instances[$alias]) ? true : false;
     }
     
@@ -79,5 +83,4 @@ trait MultitonTrait{
     protected function init($alias)
     {
     }
-    
 }

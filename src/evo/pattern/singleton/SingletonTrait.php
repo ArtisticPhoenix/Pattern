@@ -1,5 +1,6 @@
 <?php
 namespace evo\pattern\singleton;
+
 /**
  *
  * (c) 2016 Hugh Durham III
@@ -18,7 +19,8 @@ namespace evo\pattern\singleton;
  * @subpackage pattern
  *
  */
-trait SingletonTrait{
+trait SingletonTrait
+{
     
     /**
      *
@@ -30,7 +32,7 @@ trait SingletonTrait{
      * no access
      */
     final private function __construct()
-    { 
+    {
     }
     
     /**
@@ -48,36 +50,37 @@ trait SingletonTrait{
     }
  
     /**
-     * 
+     *
      * Arguments passed to getInstance are passed to init(),
      * this only happens on instantiation
-     * 
+     *
      * @return self
      */
-    public static function getInstance(){
-        if(!self::$instance){
-            self::$instance = new self;           
+    public static function getInstance()
+    {
+        if (!self::$instance) {
+            self::$instance = new self;
             self::$instance->init();
-        }       
-        return self::$instance;      
+        }
+        return self::$instance;
     }
     
     /**
-     * 
+     *
      * @return boolean
      */
-    public static function isInstantiated(){
+    public static function isInstantiated()
+    {
         return self::$instance ? true : false;
     }
     
     /**
      * called when the first instance is created (after construct)
-     * 
+     *
      * Overwrite this method with your startup code
-     * 
+     *
      */
     protected function init()
-    {       
+    {
     }
-    
 }

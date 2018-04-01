@@ -1,5 +1,6 @@
 <?php
 namespace evo\pattern\singleton;
+
 /**
  *
  * (c) 2016 Hugh Durham III
@@ -13,7 +14,8 @@ namespace evo\pattern\singleton;
  * @subpackage pattern
  *
  */
-interface  MultitonInterface extends SingletonInterface{
+interface MultitonInterface extends SingletonInterface
+{
     
     /**
      * @return self
@@ -26,5 +28,4 @@ interface  MultitonInterface extends SingletonInterface{
      * @return bool
      */
     public static function isInstantiated($alias = '');
-    
 }

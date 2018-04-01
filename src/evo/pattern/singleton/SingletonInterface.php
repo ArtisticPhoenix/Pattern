@@ -1,5 +1,6 @@
 <?php
 namespace evo\pattern\singleton;
+
 /**
  *
  * (c) 2016 Hugh Durham III
@@ -12,7 +13,8 @@ namespace evo\pattern\singleton;
  * @package Evo
  * @subpackage pattern
  */
-interface  SingletonInterface{
+interface SingletonInterface
+{
     
     /**
      * @return self
@@ -21,9 +23,8 @@ interface  SingletonInterface{
     
     /**
      * has an instance of the singleton been created
-     * 
+     *
      * @return bool
      */
     public static function isInstantiated();
-    
 }
