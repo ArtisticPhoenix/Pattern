@@ -6,7 +6,7 @@ namespace evo\pattern\singleton;
  *
  * For license information please view the LICENSE file included with this source code.
  *
- * Debug class - circular refrence safe
+ * Mutiton pattern, which is a collection of singletons.  Accessable with an alias
  *
  * @author HughDurham {ArtisticPhoenix}
  * @package Evo

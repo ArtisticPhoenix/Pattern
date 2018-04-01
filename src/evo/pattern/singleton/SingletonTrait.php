@@ -10,7 +10,7 @@ namespace evo\pattern\singleton;
  * <ul>
  *    <li>Implement \evo\pattern\singleton\SingletonInterface</li>
  *    <li>Be final</li>
- *    <li>Should define
+ *    <li>Can overwrite init() method</li>
  * </ul>
  *
  * @author HughDurham {ArtisticPhoenix}

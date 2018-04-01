@@ -6,11 +6,11 @@ namespace evo\pattern\singleton;
  *
  * For license information please view the LICENSE file included with this source code.
  *
- * Singletion pattern.  Classes using this trait should
+ * Multiton pattern.  Classes using this trait should
  * <ul>
  *    <li>Implement \evo\pattern\singleton\SingletonInterface</li>
  *    <li>Be final</li>
- *    <li>Should define
+ *    <li>Can overwrite init() method</li>
  * </ul>
  *
  * @author HughDurham {ArtisticPhoenix}
