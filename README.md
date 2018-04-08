@@ -4,6 +4,10 @@ Common programing patterns for evo
  - Singleton (trait and interface)
  - Multiton (trait and interface)
  
+ If you don't know what a Singlton is I suggest reading about it 
+ 
+ https://en.wikipedia.org/wiki/Singleton_pattern
+ 
  
  Singleton useage
  
@@ -19,7 +23,7 @@ use evo\pattern\singleton\SingletonInterface;
  }
  ```
  
- Then you can call your class like this
+ Then you can call your class like this (each additional call will return the same instance of the class)
  
 ```
 $Foo = Foo:getInstance();
