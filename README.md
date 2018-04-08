@@ -21,18 +21,14 @@ use evo\pattern\singleton\SingletonInterface;
         //stuff to do on __construct
      }
  }
- ```
- 
- Then you can call your class like this (each additional call will return the same instance of the class)
- 
+```
+Then you can call your class like this (each additional call will return the same instance of the class)
 ```
 $Foo = Foo:getInstance();
 
 ```
-
 Multiton usage
- 
- ```
+```
 use evo\pattern\singleton\MultitonTrait;
 use evo\pattern\singleton\MultitonInterface;
  
@@ -68,5 +64,5 @@ $Foo2 = Foo:getInstance('instance2');
         "evo/patterns" : "~1.0"
     }
 }
-
+```
 I plan to add a few more to this, as needed.
