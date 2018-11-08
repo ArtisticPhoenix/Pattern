@@ -50,10 +50,7 @@ trait MultitonTrait
     }
     
     /**
-     *
-     * Arguments passed to getInstance are passed to init(),
-     * this only happens on instantiation
-     *
+     * @param string $alias - the name of the singlton
      * @return self
      */
     public static function getInstance($alias='')
