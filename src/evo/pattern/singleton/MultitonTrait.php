@@ -31,21 +31,14 @@ trait MultitonTrait
     /**
      * no access
      */
-    final private function __construct()
+    private function __construct()
     {
     }
     
     /**
      * no access
      */
-    final private function __clone()
-    {
-    }
-    
-    /**
-     * no access
-     */
-    final private function __wakeup()
+    private function __clone()
     {
     }
     

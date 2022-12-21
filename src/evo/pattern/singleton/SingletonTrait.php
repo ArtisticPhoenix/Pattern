@@ -31,23 +31,16 @@ trait SingletonTrait
     /**
      * no access
      */
-    final private function __construct()
+    private function __construct()
     {
     }
     
     /**
      * no access
      */
-    final private function __clone()
+    private function __clone()
     {
-    }
-    
-    /**
-     * no access
-     */
-    final private function __wakeup()
-    {
-    }
+    } 
  
     /**
      *
