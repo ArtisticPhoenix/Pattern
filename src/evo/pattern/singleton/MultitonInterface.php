@@ -18,6 +18,13 @@ interface MultitonInterface extends SingletonInterface
 {
     
     /**
+     * Alias for getInstance
+     * @return self
+     */
+    public static function I($alias = '');
+    
+    
+    /**
      * @return self
      */
     public static function getInstance($alias = '');

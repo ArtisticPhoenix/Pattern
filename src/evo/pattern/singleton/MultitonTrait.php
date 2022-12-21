@@ -43,6 +43,15 @@ trait MultitonTrait
     }
     
     /**
+     * 
+     * @param string $alias - the name of the singlton
+     * @return self
+     */
+    public static function I($alias='') {
+        return self::getInstance($alias);
+    }
+    
+    /**
      * @param string $alias - the name of the singlton
      * @return self
      */

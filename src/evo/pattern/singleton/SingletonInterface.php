@@ -17,6 +17,12 @@ interface SingletonInterface
 {
     
     /**
+     * Alias for getInstance
+     * @return self
+     */
+    public static function I();
+    
+    /**
      * @return self
      */
     public static function getInstance();

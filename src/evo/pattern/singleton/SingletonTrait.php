@@ -41,11 +41,17 @@ trait SingletonTrait
     private function __clone()
     {
     } 
+    
+    /**
+     * 
+     * @return self
+     */
+    public static function I()
+    { 
+        return self::getInstance();
+    }
  
     /**
-     *
-     * Arguments passed to getInstance are passed to init(),
-     * this only happens on instantiation
      *
      * @return self
      */
