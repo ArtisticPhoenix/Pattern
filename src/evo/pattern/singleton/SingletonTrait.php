@@ -7,7 +7,7 @@ namespace evo\pattern\singleton;
  *
  * For license information please view the LICENSE file included with this source code.
  *
- * Singletion pattern.  Classes using this trait should
+ * Singleton pattern.  Classes using this trait should
  * <ul>
  *    <li>Implement \evo\pattern\singleton\SingletonInterface</li>
  *    <li>Be final</li>
@@ -21,41 +21,35 @@ namespace evo\pattern\singleton;
  */
 trait SingletonTrait
 {
-    
     /**
      *
-     * @var self
+     * @var ?SingletonInterface
      */
-    private static $instance;
+    private static ?SingletonInterface $instance=null;
     
     /**
      * no access
      */
-    private function __construct()
-    {
-    }
+    private function __construct(){}
     
     /**
      * no access
      */
-    private function __clone()
-    {
-    } 
-    
+    private function __clone(){}
+
     /**
-     * 
-     * @return self
+     * @return $this
      */
-    public static function I()
+    public static function I(): self
     { 
         return self::getInstance();
     }
  
     /**
      *
-     * @return self
+     * @return $this
      */
-    public static function getInstance()
+    public static function getInstance(): self
     {
         if (!self::$instance) {
             self::$instance = new self;
@@ -65,21 +59,18 @@ trait SingletonTrait
     }
     
     /**
-     *
+     * Has the singleton been created yes/no
      * @return boolean
      */
-    public static function isInstantiated()
+    public static function isInstantiated(): bool
     {
-        return self::$instance ? true : false;
+        return (bool)self::$instance;
     }
     
     /**
-     * called when the first instance is created (after construct)
-     *
-     * Overwrite this method with your startup code
+     * Called when the first instance is created (after construct)
+     * Overwrite this method with your startup code, instead of using a constructor ( which we can't)
      *
      */
-    protected function init()
-    {
-    }
+    protected function init() {}
 }

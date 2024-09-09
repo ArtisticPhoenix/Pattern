@@ -23,39 +23,39 @@ trait MultitonTrait
 {
     
     /**
+     * the list of instances
      *
      * @var array
      */
-    private static $instances = [];
+    private static array $instances = [];
     
     /**
-     * no access
+     * no access - no construction allowed
      */
-    private function __construct()
-    {
-    }
+    private function __construct(){}
     
     /**
-     * no access
+     * no access - no cloning allowed
      */
-    private function __clone()
-    {
-    }
+    private function __clone(){}
     
     /**
      * 
-     * @param string $alias - the name of the singlton
-     * @return self
+     * @param string $alias - the name of the singleton
+     * @return $this
      */
-    public static function I($alias='') {
+    public static function I(string $alias=''): self
+    {
         return self::getInstance($alias);
     }
     
     /**
-     * @param string $alias - the name of the singlton
-     * @return self
+     * Get the singleton object ( or create it if needed )
+     *
+     * @param string $alias - the name of the singleton
+     * @return $this
      */
-    public static function getInstance($alias='')
+    public static function getInstance(string $alias=''): self
     {
         if (!isset(self::$instances[$alias])) {
             self::$instances[$alias] = new self;
@@ -63,23 +63,36 @@ trait MultitonTrait
         }
         return self::$instances[$alias];
     }
-    
+
     /**
+     * Get an array containing all the instances and their aliases [alias => Obj{}, ...]
      *
-     * @return boolean
+     * @return array
      */
-    public static function isInstantiated($alias='')
+    public static function getInstances(): array
     {
-        return isset(self::$instances[$alias]) ? true : false;
+        return self::$instances;
+    }
+
+    /**
+     * Check if an alias has been created as a singleton or not yes/no
+     *
+     * @param string $alias
+     * @return bool
+     */
+    public static function isInstantiated(string $alias=''): bool
+    {
+        return isset(self::$instances[$alias]);
     }
     
     /**
-     * called when the first instance is created (after construct)
+     * Called when the first instance is created (after construct)
+     * Overwrite this method with your startup code, instead of using a constructor ( which we can't)
      *
-     * Overwrite this method with your startup code
-     *
+     * @param string $alias - the alias being instantiated
+     * @return void
      */
-    protected function init($alias)
+    protected function init(string $alias)
     {
     }
 }
