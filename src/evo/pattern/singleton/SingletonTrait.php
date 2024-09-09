@@ -72,5 +72,7 @@ trait SingletonTrait
      * Overwrite this method with your startup code, instead of using a constructor ( which we can't)
      *
      */
-    protected function init() {}
+    protected function init(): void
+    {
+    }
 }

@@ -10,7 +10,7 @@ require __DIR__.'/../vendor/autoload.php';
 class foo implements S\SingletonInterface {
     use S\SingletonTrait;
 
-    protected function init()
+    protected function init(): void
     {
         echo __CLASS__."::".__FUNCTION__."()\n";
     }
@@ -19,7 +19,7 @@ class foo implements S\SingletonInterface {
 class bar implements S\MultitonInterface {
     use S\MultitonTrait;
 
-    protected function init($alias)
+    protected function init($alias): void
     {
         echo __CLASS__."::".__FUNCTION__."($alias)\n";
     }

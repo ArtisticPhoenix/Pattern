@@ -92,7 +92,7 @@ trait MultitonTrait
      * @param string $alias - the alias being instantiated
      * @return void
      */
-    protected function init(string $alias)
+    protected function init(string $alias): void
     {
     }
 }
