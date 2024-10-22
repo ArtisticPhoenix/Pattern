@@ -42,26 +42,26 @@ trait MultitonTrait
     /**
      * 
      * @param string $alias - the name of the singleton
-     * @return $this
+     * @return MultitonInterface
      */
-    public static function I(string $alias=''): self
+    public static function I(string $alias=''): MultitonInterface
     {
-        return self::getInstance($alias);
+        return static::getInstance($alias);
     }
     
     /**
      * Get the singleton object ( or create it if needed )
      *
      * @param string $alias - the name of the singleton
-     * @return $this
+     * @return MultitonInterface
      */
-    public static function getInstance(string $alias=''): self
+    public static function getInstance(string $alias=''): MultitonInterface
     {
-        if (!isset(self::$instances[$alias])) {
-            self::$instances[$alias] = new self;
-            self::$instances[$alias]->init($alias);
+        if (!isset(static::$instances[$alias])) {
+            static::$instances[$alias] = new static;
+            static::$instances[$alias]->init($alias);
         }
-        return self::$instances[$alias];
+        return static::$instances[$alias];
     }
 
     /**
@@ -71,7 +71,7 @@ trait MultitonTrait
      */
     public static function getInstances(): array
     {
-        return self::$instances;
+        return static::$instances;
     }
 
     /**
@@ -82,7 +82,7 @@ trait MultitonTrait
      */
     public static function isInstantiated(string $alias=''): bool
     {
-        return isset(self::$instances[$alias]);
+        return isset(static::$instances[$alias]);
     }
     
     /**

@@ -40,22 +40,22 @@ trait SingletonTrait
     /**
      * @return $this
      */
-    public static function I(): self
+    public static function I(): static
     { 
-        return self::getInstance();
+        return static::getInstance();
     }
  
     /**
      *
-     * @return $this
+     * @return SingletonInterface
      */
-    public static function getInstance(): self
+    public static function getInstance(): SingletonInterface
     {
-        if (!self::$instance) {
-            self::$instance = new self;
-            self::$instance->init();
+        if (!static::$instance) {
+            static::$instance = new static;
+            static::$instance->init();
         }
-        return self::$instance;
+        return static::$instance;
     }
     
     /**
@@ -64,7 +64,7 @@ trait SingletonTrait
      */
     public static function isInstantiated(): bool
     {
-        return (bool)self::$instance;
+        return (bool)static::$instance;
     }
     
     /**
