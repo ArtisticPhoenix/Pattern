@@ -18,16 +18,16 @@ interface SingletonInterface
     
     /**
      * Alias for getInstance
-     * @return self
+     * @return static
      */
-    public static function I(): self;
+    public static function I(): static;
     
     /**
      * Get the singleton object ( or create it if needed )
      *
-     * @return self
+     * @return static
      */
-    public static function getInstance(): self;
+    public static function getInstance(): static;
     
     /**
      * has an instance of the singleton been created

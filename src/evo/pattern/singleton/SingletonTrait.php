@@ -38,7 +38,7 @@ trait SingletonTrait
     private function __clone(){}
 
     /**
-     * @return $this
+     * @return SingletonInterface
      */
     public static function I(): static
     { 
@@ -47,15 +47,15 @@ trait SingletonTrait
  
     /**
      *
-     * @return SingletonInterface
+     * @return static
      */
-    public static function getInstance(): SingletonInterface
+    public static function getInstance(): static
     {
-        if (!static::$instance) {
-            static::$instance = new static;
-            static::$instance->init();
+        if (!self::$instance) {
+            self::$instance = new static;
+            self::$instance->init();
         }
-        return static::$instance;
+        return self::$instance;
     }
     
     /**
@@ -64,7 +64,7 @@ trait SingletonTrait
      */
     public static function isInstantiated(): bool
     {
-        return (bool)static::$instance;
+        return (bool)self::$instance;
     }
     
     /**
