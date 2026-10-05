@@ -17,7 +17,6 @@ namespace evo\pattern\singleton;
  * @author HughDurham {ArtisticPhoenix}
  * @package Evo
  * @subpackage pattern
- *
  */
 trait MultitonTrait
 {
